@@ -5,13 +5,12 @@ class Base extends Model {
 
     const date = new Date();
     this.created_at = date;
+    this.updated_at = this.created_at;
   }
 
   $beforeUpdate(context) {
     super.$beforeUpdate(context);
-
-    const date = new Date();
-    this.updated_at = date;
+    this.updated_at = new Date();
   }
 }
 

@@ -6,7 +6,7 @@ module.exports = function(app, opts, next) {
   app.get("/", async function(req, reply) {
     try {
       const users = await this.objection.models.user.query();
-      return reply.code(200).send(users);
+      return reply.code(200).send({ users });
     } catch (err) {
       throw Boom.boomify(err, { message: err.message });
     }

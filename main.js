@@ -2,6 +2,7 @@
 
 const fastify = require("fastify");
 const config = require("./knexfile");
+
 const User = require("./models/User.js");
 
 const buildApp = function(logger) {
