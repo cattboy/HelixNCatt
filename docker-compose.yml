@@ -4,11 +4,13 @@ services:
   db:
     image: mysql:8.0.19
     command: --default-authentication-plugin=mysql_native_password
-    environment:
-      MYSQL_ROOT_PASSWORD: niggas
-      MYSQL_USER: helix
-      MYSQL_PASSWORD: niggas1
-      MYSQL_DATABASE: apidb
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: niggas
+    #   MYSQL_USER: helix
+    #   MYSQL_PASSWORD: niggas1
+    #   MYSQL_DATABASE: apidb
+    env_file:
+      - .env
     ports:
       - 3306:3306
     volumes:
