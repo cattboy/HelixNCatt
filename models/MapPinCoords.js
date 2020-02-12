@@ -1,9 +1,9 @@
 "use strict";
 const Base = require("./Base");
 
-class MapRoles extends Base {
+class MapPinCoords extends Base {
   static get tableName() {
-    return "map_roles";
+    return "maps_pin_coords";
   }
   $beforeInsert(context) {
     super.$beforeInsert(context);
@@ -18,11 +18,7 @@ class MapRoles extends Base {
 
       properties: {
         id: { type: "integer" },
-        is_creator: { type: "boolean" },
-        can_submit: { type: "boolean" },
-        can_remove: { type: "boolean" },
-        can_add_users: { type: "boolean" },
-        can_remove_users: { type: "boolean" },
+        ingame_coords: { type: "string" },
         created_at: { type: "string" },
         updated_at: { type: "string" }
       }
@@ -30,4 +26,4 @@ class MapRoles extends Base {
   }
 }
 
-module.exports = MapRoles;
+module.exports = MapPinCoords;
